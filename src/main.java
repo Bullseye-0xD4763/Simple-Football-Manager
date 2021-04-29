@@ -5,6 +5,7 @@ import static kotlin.reflect.jvm.internal.impl.builtins.StandardNames.FqNames.st
 
 class PrintAndScan{
     public static void printmenu(){
+
         System.out.print("Enter one of the following options: " +
                 "\n1. Start game" +
                 "\n2. Leave Game" +
@@ -16,37 +17,31 @@ class PrintAndScan{
     }
 
     public static void main(String args[]){
+        boolean startLoop = false;
+        while(startLoop == false) {
         Scanner in = new Scanner(System.in);
         printmenu();
         //string name é a capturada
         char name = in.next().charAt(0);
-        if (name >= '1' && name <= '7'){
-            System.out.println("no erro");
-            //carrega classe Iniciar Jogo
+            switch (name) {
+                case '1':
+                    System.out.println("Start");
+                    //Start game
+                    startLoop = true;
+                case '2':
+                    //Leave Game
+                    startLoop = true;
+                case '3':
+                    //load save
+                    startLoop = true;
+                case '4':
+                    //Manage Team
+                    startLoop = true;
+                default:
+                    //it will end the program
+                    System.out.println("Invalid option");
+            }
         }
-        else{
-            System.out.println("ERROR");
-        }
-        /*
-        switch(name){
-            case 1:
-                //code to see members
-                break;
-            case 2:
-                //code to add members
-                break;
-            case 3:
-                //code to delete members
-                break;
-            case 4:
-                //it will end the program
-                run=false;
-                break;
-            default:
-                System.out.println("Invalid option");
-        }
-        */
-        
     }
 }
 
