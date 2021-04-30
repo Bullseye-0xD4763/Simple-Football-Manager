@@ -1,7 +1,4 @@
-import java.util.*;
-import static kotlin.reflect.jvm.internal.impl.builtins.StandardNames.FqNames.string;
-
-
+import java.util.Scanner;
 
 class PrintAndScan{
     public static void printmenu(){

@@ -1,27 +1,27 @@
 public class Goalkeepers extends Player {
-    public int reflexos;
-    public int umparaum;
-    public int jogoaereo;
+    public int reflexes;
+    public int duel;
+    public int airgame;
     
     public Goalkeepers(){
         
     }
     
-    public Goalkeepers(String PlrName, int PlrNumber, int Atc, int Def, int Drb, int reflexos, int umparaum, int jogoaereo){
-        super(PlrName, PlrNumber, Atc, Def, Drb);
-        this.reflexos = reflexos;
-        this.umparaum = umparaum;
-        this.jogoaereo = jogoaereo;
+    public Goalkeepers(String PlrName, int PlrNumber, int Atc, int Def, int Drb, int reflexes, int duel, int airgame){
+        super();
+        this.reflexes = reflexes;
+        this.duel = duel;
+        this.airgame = airgame;
     }
     
-    public int getJogoaereo(){
-        return this.jogoaereo;
+    public int getAirGame(){
+        return this.airgame;
     }
-    public int getUmparaum(){
-        return this.umparaum;
+    public int getDuel(){
+        return this.duel;
     }
-    public int getReflexos(){
-        return this.reflexos;
+    public int getReflexes(){
+        return this.reflexes;
     }
 
 }

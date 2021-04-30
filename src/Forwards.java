@@ -1,22 +1,22 @@
 public class Forwards extends Player{
-    public int finalizacao;
-    public int compostura;
+    public int finalization;
+    public int composture;
     public int drible;
     
     public Forwards(){
-      public Forwards(String PlrName, int PlrNumber, int Atc, int Def, int Drb, int finalizacao, int compostura, int drible){
+      public Forwards(String PlrName, int PlrNumber, int Atc, int Def, int Drb, int finalization, int composture, int drible){
         super(String PlrName, int PlrNumber, int Atc, int Def, int Drb);
-        this.finalizacao=finalizacao;
-        this.compostura=compostura;
+        this.finalization=finalization;
+        this.composture=composture;
         this.drible=drible;
     }
     
-    public int getFinalizacao(){
-        return this.finalizacao;
+    public int getFinalization(){
+        return this.finalization;
     }
     
-    public int getCompostura(){
-        return this.compostura;
+    public int getComposture(){
+        return this.composture;
     }
     
     public int getDrible(){

@@ -1,30 +1,30 @@
 public class Midfielders extends Player{
-    public int passe;
-    public int creatividade;
-    public int rematesdelonge;
-    public int recuperarbolas;
+    public int pass;
+    public int creativity;
+    public int longshot;
+    public int getball;
     
     public Midfielders(){
         
     }
-    public Midfielders(String PlrName, int PlrNumber, int Atc, int Def, int Drb, int passe, int creatividade, int rematesdelonge, int recuperarbolas)
+    public Midfielders(String PlrName, int PlrNumber, int Atc, int Def, int Drb, int pass, int creativity, int longshot, int getball)
     {
       super(String PlrName, int PlrNumber, int Atc, int Def, int Drb);
-        this.passe=passe;
-        this.creatividade=creatividade;
-        this.rematesdelonge=rematesdelonge;
-        this.recuperarbolas=recuperarbolas;
+        this.pass=pass;
+        this.creativity=creativity;
+        this.longshot=longshot;
+        this.getball=getball;
     }
-  public int getCreatividade(){
-        return this.creatividade;
+  public int getCreativity(){
+        return this.creativity;
     }
-    public int getPasse(){
-        return this.passe;
+    public int getPass(){
+        return this.pass;
     }
-    public int getRematesdelonge(){
-        return this.rematesdelonge;
+    public int getLongShot(){
+        return this.longshot;
     }
-  public int getRecuperarbolas(){
-    return this.recuperarbolas;
+  public int getGetBall(){
+    return this.getball;
   }
 }
