@@ -1,60 +1,60 @@
 public class MidFielders extends Players{
-    public int reflexes;
-    public int duel;
-    public int airgame;
+    public int getball;
+    public int creativity;
+    public int longshot;
     public int pass;
 
 
     //construtor de criar as variaveis vazias
     public MidFielders(){
         super();
-        this.reflexes = 0;
-        this.duel = 0;
-        this.airgame = 0;
+        this.getball = 0;
+        this.creativity = 0;
+        this.longshot = 0;
         this.pass = 0;
     }
 
     //Pega nos argumentos
-    public MidFielders(String PlrName, int PlrNumber, int Atc, int Def, int Drb, int reflexes, int duel, int airgame){
-        super(PlrName, PlrNumber, Atc, Def, Drb, reflexes, duel, airgame);
-        this.reflexes = reflexes;
-        this.duel = duel;
-        this.airgame = airgame;
+    public MidFielders(String PlrName, int PlrNumber, int Atc, int Def, int Drb, int getball, int creativity, int longshot){
+        super(PlrName, PlrNumber, Atc, Def, Drb, getball, creativity, longshot);
+        this.getball = getball;
+        this.creativity = creativity;
+        this.longshot = longshot;
         this.pass = pass;
     }
 
     //criar duas instancias de jogador || Pedro.MidFielders(Ze)
     public MidFielders(MidFielders placeholder){
         super(placeholder);
-        this.reflexes = placeholder.reflexes;
-        this.duel = placeholder.duel;
-        this.airgame = placeholder.airgame;
+        this.getball = placeholder.getball;
+        this.creativity = placeholder.creativity;
+        this.longshot = placeholder.longshot;
         this.pass = placeholder.pass;
     }
 
     //getters e setters
-    public int getAirGame(){
-        return this.airgame;
+    public int getLongShot(){
+        return this.longshot;
     }
-    public int getDuel(){
-        return this.duel;
+    public int getCreativity(){
+        return this.creativity;
     }
-    public int getReflexes(){
-        return this.reflexes;
+    public int getGetBall(){
+        return this.getball;
     }
     public int getPass(){
         return this.pass;
     }
 
 
-    public void setAirGame(){
-        this.airgame = airgame;
+    public void setLongShot(){
+        this.longshot = longshot;
     }
-    public void setDuel(){
-        this.duel = duel;
+    public void setCreativity(){
+        this.creativity = creativity;
     }
-    public void setReflexes(){
-        this.reflexes = reflexes;
+    public void setGetBall(){
+        this.getball = getball;
     }
     public void setPass() {
         this.pass = pass;
