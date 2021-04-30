@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Players {
     //mudar aqui
     private String PlrName;
@@ -5,16 +7,33 @@ public class Players {
     private int Atc;
     private int Def;
     private int Drb;
-    
+    private int Drc;
+
 
     //Ir buscar valores de variaveis e introduzir
     public Players(String PlrName, int PlrNumber, int Atc, int Def, int Drb) {
-        this(PlrName, int PlrNumber, int Atc, int Def, int Drb);
+        this.PlrName = PlrName;
+        this.PlrNumber = PlrNumber;
+        this.Atc = Atc;
+        this.Def = Def;
+        this.Drb = Drb;
     }
 
     //Copiar valores de outro jogador
     public Players(Players p){
         this(p.PlrName, p.PlrNumber, p.Atc, p.Def, p.Drb);
+    }
+
+    //constructor
+    public Players() {
+        this.PlrName = "";
+        this.PlrNumber = 0;
+        this.Atc = 0;
+        this.Def = 0;
+        this.Drb = 0;
+    }
+
+    public Players(String plrName, int plrNumber, int atc, int def, int drb, int reflexes, int duel, int airgame) {
     }
 
 

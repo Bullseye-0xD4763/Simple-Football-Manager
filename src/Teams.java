@@ -3,21 +3,23 @@ import java.util.ArrayList;
 public class Teams {
     private String name;
     private int overall;
-    ArrayList <ActivePlr> active;
-    ArrayList <BenchPlr> bench;
+    ArrayList <Players> active;
+    ArrayList <Players> bench;
 
     //construtor de criar as variaveis vazias
     public Teams() {
         this.name = "";
-        this.active = new ArrayList<ActivePlr>();
-        this.bench = new ArrayList<BenchPlr>();
+        this.active = new ArrayList<Players>();
+        this.bench = new ArrayList<Players>();
         this.overall = 0;
-
     }
 
     //Ir buscar valores de variaveis e introduzir
-    public Teams(String name, int overall, ArrayList<ActivePlr> active, ArrayList<BenchPlr> bench) {
-        this(name, overall, active, bench);
+    public Teams(String name, int overall, ArrayList<Players> active, ArrayList<Players> bench) {
+        this.name = name;
+        this.overall = overall;
+        this.active = new ArrayList<Players>(active);
+        this.bench =  new ArrayList<Players>(bench);
     }
 
     //Copiar valores de outra equipa
