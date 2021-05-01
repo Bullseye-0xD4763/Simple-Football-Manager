@@ -1,4 +1,4 @@
-public class MidFielders extends Players{
+public class Wings extends Players{
     public int center;
     public int speed;
     public int endurance;
@@ -7,11 +7,11 @@ public class MidFielders extends Players{
     public int airgame;
     public int kick;
     public int pass;
-    public int getball;
+    public int longpass;
 
 
     //construtor de criar as variaveis vazias
-    public MidFielders(){
+    public Wings(){
         super();
         this.center = 0;
         this.speed = 0;
@@ -21,12 +21,12 @@ public class MidFielders extends Players{
         this.airgame = 0;
         this.kick = 0;
         this.pass = 0;
-        this.getball = 0;
+        this.longpass = 0;
     }
 
     //Pega nos argumentos
-    public MidFielders(String PlrName, int PlrNumber, int center, int Atc, int Def, int Drb, int speed, int endurance,
-                       int dexterity, int propulsion, int airgame, int kick, int pass, int getball){
+    public Wings(String PlrName, int PlrNumber, int center, int Atc, int Def, int Drb, int speed, int endurance,
+                       int dexterity, int propulsion, int airgame, int kick, int pass, int longpass){
         super(PlrName, PlrNumber, Atc, Def, Drb, speed, endurance, dexterity);
         this.center = center;
         this.speed = speed;
@@ -36,11 +36,11 @@ public class MidFielders extends Players{
         this.airgame = airgame;
         this.kick = kick;
         this.pass = pass;
-        this.getball = getball;
+        this.longpass = longpass;
     }
 
-    //criar duas instancias de jogador || Pedro.MidFielders(Ze)
-    public MidFielders(MidFielders placeholder){
+    //criar duas instancias de jogador || Pedro.Wings(Ze)
+    public Wings(Wings placeholder){
         super(placeholder);
         this.center = placeholder.center;
         this.speed = placeholder.speed;
@@ -50,7 +50,7 @@ public class MidFielders extends Players{
         this.airgame = placeholder.airgame;
         this.kick = placeholder.kick;
         this.pass = placeholder.pass;
-        this.getball = placeholder.getball;
+        this.longpass = placeholder.longpass;
     }
 
     //getters e setters
@@ -78,8 +78,8 @@ public class MidFielders extends Players{
     public int getPass(){
         return this.pass;
     }
-    public int getGetball(){
-        return this.getball;
+    public int getLongpass(){
+        return this.longpass;
     }
 
     public int setCenter(){
@@ -106,7 +106,9 @@ public class MidFielders extends Players{
     public int setPass(){
         return this.pass;
     }
-    public int setGetball(){
-        return this.getball;
+    public int setLongpass(){
+        return this.longpass;
     }
+}
+{
 }

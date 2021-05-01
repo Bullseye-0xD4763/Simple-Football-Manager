@@ -9,10 +9,10 @@ public class GameStart {
     public int team2goal = 0;
     public int time = 0;
     
-    public MatchEngine(Goalkeepers g1, Defenders d1, Defenders d2, Defenders d3, Defenders d4,
-                       MidFielders m1, MidFielders m2, MidFielders m3, MidFielders m4, Forwards f1,
-                       Forwards f2,Goalkeepers g2, Defenders d5, Defenders d6, Defenders d7, Defenders d8,
-                       MidFielders m5, MidFielders m6, MidFielders m7, MidFielders m8, Forwards f3, Forwards f4){
+    public void MatchEngine(Goalkeepers g1, Defenders d1, Defenders d2, Defenders d3, Defenders d4,
+                            MidFielders m1, MidFielders m2, MidFielders m3, MidFielders m4, Forwards f1,
+                            Forwards f2, Goalkeepers g2, Defenders d5, Defenders d6, Defenders d7, Defenders d8,
+                            MidFielders m5, MidFielders m6, MidFielders m7, MidFielders m8, Forwards f3, Forwards f4){
         //Team 1
         this.g1=g1;
         this.d1=d1;
@@ -44,21 +44,21 @@ public class GameStart {
     return team1goal;
   }
   
-  public int setTeam1goal(int team1goal){
+  public void setTeam1goal(int team1goal){
     this.team1goal = team1goal;
   }
 public int getTeam2goal (){
     return team2goal;
   }
   
-  public int setTeam2goal(int team2goal){
+  public void setTeam2goal(int team2goal){
     this.team2goal = team2goal;
   }
   public int getTime (){
     return time;
   }
   
-  public int setTime(int time){
+  public void setTime(int time){
     this.time = time;
   }
  }
