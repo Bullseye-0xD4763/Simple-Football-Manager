@@ -1,4 +1,5 @@
 public class Defenders extends Players {
+    public int center;
     public int speed;
     public int endurance;
     public int dexterity;
@@ -12,6 +13,7 @@ public class Defenders extends Players {
     //construtor de criar as variaveis vazias
     public Defenders() {
         super();
+        this.center = 0;
         this.speed = 0;
         this.endurance = 0;
         this.dexterity = 0;
@@ -23,8 +25,9 @@ public class Defenders extends Players {
     }
 
     //Pega nos argumentos
-    public Defenders(String PlrName, int PlrNumber, int Atc, int Def, int Drb, int speed, int dexterity, int dribble) {
+    public Defenders(String PlrName, int PlrNumber, int center, int Atc, int Def, int Drb, int speed, int dexterity, int dribble) {
         super(PlrName, PlrNumber, Atc, Def, Drb, speed, dexterity, dribble);
+        this.center = center;
         this.speed = speed;
         this.endurance = endurance;
         this.dexterity = dexterity;
@@ -38,6 +41,7 @@ public class Defenders extends Players {
     //criar duas instancias de jogador || Pedro.Defenders(Ze)
     public Defenders(Defenders placeholder) {
         super(placeholder);
+        this.center = placeholder.center;
         this.speed = placeholder.speed;
         this.endurance = placeholder.endurance;
         this.dexterity = placeholder.dexterity;
@@ -49,6 +53,9 @@ public class Defenders extends Players {
     }
 
     //getters
+    public int getCenter() {
+           return this.center;
+    }
     public int getSpeed() {
         return this.speed;
     }
@@ -75,6 +82,9 @@ public class Defenders extends Players {
     }
 
     //setters
+    public void setCenter() {
+        this.speed = center;
+    }
     public void setSpeed() {
         this.speed = speed;
     }
