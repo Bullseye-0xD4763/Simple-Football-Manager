@@ -63,5 +63,4 @@ public class Teams {
 
         return this.name.equals(team.name) && this.overall == team.overall && this.active.equals(team.active) && this.bench.equals(team.bench);
     }
-
 }

@@ -20,7 +20,6 @@ public class Defenders extends Players{
         this.speed = speed;
         this.duel = duel;
         this.dribble = dribble;
-        this.pass = pass;
     }
 
     //criar duas instancias de jogador || Pedro.Defenders(Ze)
