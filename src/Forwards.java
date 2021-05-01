@@ -1,4 +1,4 @@
-public class Forwards extends Players{
+public class Strikers extends Players{
     public int center;
     public int speed;
     public int endurance;
@@ -11,7 +11,7 @@ public class Forwards extends Players{
 
 
     //construtor de criar as variaveis vazias
-    public Forwards(){
+    public Strikers(){
         super();
         this.center = 0;
         this.speed = 0;
@@ -25,7 +25,7 @@ public class Forwards extends Players{
     }
 
     //Pega nos argumentos
-    public Forwards(String PlrName, int PlrNumber, int center, int Atc, int Def, int Drb, int speed, int endurance,
+    public Strikers(String PlrName, int PlrNumber, int center, int Atc, int Def, int Drb, int speed, int endurance,
                        int dexterity, int propulsion, int airgame, int kick, int pass, int precision){
         super(PlrName, PlrNumber, Atc, Def, Drb, speed, endurance, dexterity);
         this.center = center;
@@ -40,7 +40,7 @@ public class Forwards extends Players{
     }
 
     //criar duas instancias de jogador || Pedro.Forwards(Ze)
-    public Forwards(Forwards placeholder){
+    public Strikers(Strikers placeholder){
         super(placeholder);
         this.center = placeholder.center;
         this.speed = placeholder.speed;
