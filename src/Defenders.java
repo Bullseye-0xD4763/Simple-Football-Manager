@@ -8,7 +8,6 @@ public class Defenders extends Players {
     public int kick;
     public int pass;
     public int tackle;//extra stat
-    public int center;
 
     //construtor de criar as variaveis vazias
     public Defenders() {

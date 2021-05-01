@@ -110,5 +110,3 @@ public class Wings extends Players{
         return this.longpass;
     }
 }
-{
-}
