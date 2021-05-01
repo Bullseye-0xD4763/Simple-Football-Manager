@@ -17,6 +17,7 @@ public class Stats extends Players{
     public int tackle; //defenders
     public int getball; //midfielders
     public int longpass; //laterais
+    public int precision;//avançados
 
 
     //Stats de jogo
