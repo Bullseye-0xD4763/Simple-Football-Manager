@@ -4,7 +4,7 @@ import java.util.*;
 
 
 public class Main{
-
+    //Scanner declarado fora do main só por conveniência
     private static Scanner in;
 
     public static void main(String[] args) {
