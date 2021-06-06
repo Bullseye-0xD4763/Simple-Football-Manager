@@ -3,7 +3,7 @@ package proj;
 import java.util.*;
 
 
-class PrintAndScan{
+public class Main{
 
     private static Scanner in;
 
