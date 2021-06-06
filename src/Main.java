@@ -1,75 +1,68 @@
 package proj;
 
-import java.util;
-import java.util.stream.Collectors;
+import java.util.*;
+
 
 class PrintAndScan{
-    //criar variavel vazia
-    private String option;
-    public PrintAndScan(){
-        this.option = ' ';
-    }
-    //recebe argumento e copia o seu valor para a 'option'
-    public PrintAndScan(String option){
-        this.option = option;
-    }
-    //copia PrintAndScan para outro PrintAndScan
-    public PrintAndScan(PrintAndScan var) {
-        this.option = var.getOption();
-    }
 
-    // getter
-    public String getOption() {
-        return this.option;
-    }
+    private static Scanner in;
 
-    // setter
-    public void setOption(String var2) {
-        this.option = var2;
-    }
-    
+    public static void main(String[] args) {
+        //Iniciar objetos
+        proj.Parser p  = new proj.Parser();
+        in = new Scanner(System.in);
 
 
 
-
-    public static void menuPrint(String option) {
-        System.out.println("Enter one of the following options: "+"\n1. Start game"+"\n2. Leave Game"+"\n3. Load Save"+"\n4. Manage Team"+"\n5. Create Team"+"\n6. Create Player"+"\n7. Credits\n");
-        boolean startLoop = false;
-        while (startLoop == false) {
+        //Menu
+        System.out.println("Enter one of the following options: "+"\n1. Start game"+"\n2. Load Save"+"\n3. Manage Team"+"\n4. Create Team"+"\n5. Create Player"+"\n6. Credits\n7. Exit\n");
+        boolean keepAlive = true;
+        while (keepAlive == true) {
             // string name é a capturada
             //char name = in.next().charAt(0);
-            switch (option) {
-                case '1':
+            String stdName = in.nextLine();
+            switch (stdName) {
+                case "1":
                     System.out.println("Start");
-                    // Start game
-                    startLoop = true;
-                case '2':
-                    // Leave Game
-                    startLoop = true;
-                case '3':
+                    try {
+                        Parser.parse();
+                    } catch (LinhaIncorretaException e) {
+                        e.printStackTrace();
+                    }
+                    keepAlive = false;
+                    break;
+                case "2":
                     // load save
-                    startLoop = true;
-                case '4':
+                    keepAlive = false;
+                    break;
+                case "3":
                     // Manage Team
-                    startLoop = true;
+                    keepAlive = false;
+                    break;
+                case "4":
+                    // Create Team
+                    keepAlive = false;
+                    break;
+                case "5":
+                    // Create Player
+                    keepAlive = false;
+                    break;
+                case "6":
+                    // Créditos
+                    keepAlive = false;
+                    break;
+                case "7":
+                    // Leave Game
+                    keepAlive = false;
+                    break;
                 default:
                     // it will end the program
                     System.out.println("Invalid option");
+                    keepAlive = false;
                     in.close();
             }
         }
     }
 }
 
-public class Main {
-    
-    PrintAndScan printfunction = new PrintAndScan();
 
-    Scanner in = new Scanner(System.in);
-    public static void main(String[] args) throws Exception {
-
-        Parser.parse();
-    }
-        String stdName = input.nextLine();
-        printfunction.menuPrint(stdName);
-}
