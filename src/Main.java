@@ -83,6 +83,12 @@ public class Main{
         Jogador j = new Jogador(name,number,velocidade,resistencia,destreza,impulsao,cabeca,remate,passe);
         return j;
     }
+    
+        private static Equipa createTeam(){
+        System.out.println("Nome da equipa:"); String name = in.nextLine();
+        Equipa e = new Equipa(name);
+        return e;
+    }
 }
 
 
