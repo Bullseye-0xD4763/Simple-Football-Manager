@@ -11,10 +11,10 @@ import java.util.Map;
 public class Parser {
 
     public static void parse() throws LinhaIncorretaException {
-        List<String> linhas = lerFicheiro("output.txt");
-        Map<String, Equipa> equipas = new HashMap<>(); //nome, equipa
-        Map<Integer, Jogador> jogadores = new HashMap<>(); //numero, jogador
-        List<Jogo> jogos = new ArrayList<>();
+        List<String> linhas = lerFicheiro("src/proj/Jogadores.txt"); //O path pode ter de ser alterado, mas funciona caralho
+        Map<String, Equipa> equipas = new HashMap<>();               //Novo hashmap <Clube do ze, Equipa>
+        Map<Integer, Jogador> jogadores = new HashMap<>();           //Novo hasmap <23, Joao>
+        List<Jogo> jogos = new ArrayList<>();                        //Lista do tipo jogo, com o nome "Jogos
         Equipa ultima = null; Jogador j = null;
         String[] linhaPartida;
         for (String linha : linhas) {
@@ -78,7 +78,8 @@ public class Parser {
 
     public static List<String> lerFicheiro(String nomeFich) {
         List<String> lines;
-        try { lines = Files.readAllLines(Paths.get(nomeFich), StandardCharsets.UTF_8); }
+        Path mypath = Paths.get(nomeFich);
+        try { lines = Files.readAllLines(mypath, StandardCharsets.UTF_8); }
         catch(IOException exc) { lines = new ArrayList<>(); }
         return lines;
     }
