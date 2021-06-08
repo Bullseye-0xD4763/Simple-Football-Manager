@@ -23,18 +23,16 @@ public class Main{
         in = new Scanner(System.in);
 
 
-        //Menu
-        System.out.println("Enter one of the following options: "+"\n1. Start game"+"\n2. Load Save"+"\n3. Manage Team"+"\n4. Create Team"+"\n5. Create Player"+"\n6. Credits\n7. Exit\n");
         keepAlive = true;
         while (keepAlive == true) {
-            // string name é a capturada
+            System.out.println("\nEnter one of the following options: "+"\n1. Start game"+"\n2. Load Save"+"\n3. Manage Team"+"\n4. Create Team"+"\n5. Create Player"+"\n6. Credits\n7. Exit\n");
             String stdName = in.nextLine();
             switch (stdName) { 
                 case "1":
                     System.out.println("Start");
                     Parser.parse();
                     keepAlive = false;
-                        break;
+                    break;
                 case "2":
                     // load save
                     keepAlive = false;
