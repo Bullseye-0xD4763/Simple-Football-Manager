@@ -84,10 +84,14 @@ public class Main{
         return j;
     }
     
-        private static Equipa createTeam(){
+    private static void createTeam(){
         System.out.println("Nome da equipa:"); String name = in.nextLine();
-        Equipa e = new Equipa(name);
-        return e;
+        try {
+            String content = "\nEquipa: " + name;
+            Files.write(Paths.get("src/proj/Jogadores.txt"), content.getBytes(StandardCharsets.UTF_8), StandardOpenOption.APPEND);
+        } catch (IOException ex){
+            ex.printStackTrace();
+        }
     }
 }
 
