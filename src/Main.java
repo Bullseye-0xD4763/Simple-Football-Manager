@@ -89,8 +89,10 @@ public class Main {
         }
     }
 
+
+
     //5. Create Player
-    private static Jogador createPlayer() throws IOException {
+    private static void createPlayer() throws IOException {
         //Recebe estatísticas
         System.out.println("Nome do jogador:");
         String name = in.nextLine();
@@ -103,36 +105,48 @@ public class Main {
         System.out.println("Remate: ");int remate = in.nextInt();
         System.out.println("Passe: ");int passe = in.nextInt();
 
-        //Recebe posição
-        System.out.println("Posição: \n1. Avançado\n2. Defesa\n3. Medio\n4.Lateraln\n5. Guarda-Redes \n");
-        int posicao = in.nextInt();
 
+        //Recebe posição
+        System.out.println("Posição: \n1. Avançado\n2. Defesa\n3. Medio\n4. Lateral\n5. Guarda-Redes \n");
+        int posicao = in.nextInt();
+        int recuperacao = 0, cruzamento = 0, elasticidade = 0;
+        String posicaoString = null;
 
             //Dependendo da posição escrever "Posição: Nome,vel,res,destr, etc..
         switch (posicao) {
             case 1:
+                posicaoString = "Avancado";
                 break;
             case 2:
+                posicaoString = "Defesa";
                 break;
             case 3:
+                posicaoString = "Medio";
                 System.out.println("Recuperação: ");
-                int rec = in.nextInt();
+                recuperacao = in.nextInt();
                 break;
             case 4:
+                posicaoString = "Lateral";
                 System.out.println("Cruzamento: ");
-                int cruz = in.nextInt();
+                cruzamento = in.nextInt();
                 break;
             case 5:
-                System.out.println("Elasticidade");
+                posicaoString = "Guarda-Redes";
+                System.out.println("Elasticidade: ");
+                elasticidade = in.nextInt();
+                break;
+            default:
+                System.out.println("Posição inexistente");
                 break;
         }
 
-        Jogador j = new Jogador(name, number, velocidade, resistencia, destreza, impulsao, cabeca, remate, passe);
-
-        String jo;
-        updateDatabase("Equipa:Temp","Equipa:Temp\n");
-
-        return j;
+        //nao há perigo de posicaoString nao estar incializada, pois caso contrário não muda a database
+        if (posicao >= 1 && posicao <= 5) {
+            if (posicao == 1 || posicao == 2) { updateDatabase("Equipa:Temp", "Equipa:Temp\n"+posicaoString+":"+name+","+velocidade+","+resistencia+","+destreza+","+impulsao+","+cabeca+","+ remate +","+passe);}
+            else if (posicao == 3) {updateDatabase("Equipa:Temp", "Equipa:Temp\n"+posicaoString+":"+name+","+velocidade+","+resistencia+","+destreza+","+impulsao+","+cabeca+","+ remate +","+passe+","+recuperacao);}
+            else if (posicao == 4) {updateDatabase("Equipa:Temp", "Equipa:Temp\n"+posicaoString+":"+name+","+velocidade+","+resistencia+","+destreza+","+impulsao+","+cabeca+","+ remate +","+passe+","+cruzamento);}
+            else {updateDatabase("Equipa:Temp", "Equipa:Temp\n"+posicaoString+":"+name+","+velocidade+","+resistencia+","+destreza+","+impulsao+","+cabeca+","+ remate +","+passe+","+elasticidade);}
+        }
     }
 
     //Se não existir equipa não realiza alterações mas não retorna erro
@@ -155,4 +169,3 @@ public class Main {
 
 
 }
-
