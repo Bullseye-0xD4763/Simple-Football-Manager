@@ -11,6 +11,30 @@ import java.util.List;
 import java.util.Map;
 
 public class Parser {
+    public static void loadSave()throws LinhaIncorretaException{
+        List<String> linhas = lerFicheiro("src/proj/Jogadores.txt"); //Lista de Strings = informação ficheiro
+        Map<String, Equipa> equipas = new HashMap<>(); //Novo hashmap <CLube do ze, Equipa>
+        Map<Integer, Jogador> jogadores = new HashMap<>(); //Novo hashmap <23, Joao>
+        List<Jogo> jogos = new ArrayList<>();           //Lista do tipo jogo, com o nome "jogos"
+        Equipa ultima = null; Jogador j = null;         //Equipa ultima = null
+        String[] linhaPartida;                          //Array de strings
+        for (String linha : linhas) {
+            linhaPartida = linha.split(":", 2);
+            switch(linhaPartida[0]){
+                case "Jogo":
+                    Jogo jo = Jogo.parse(linhaPartida[1]);
+                    jogos.add(jo);
+                    break;
+                default:
+                    break;
+            }
+        }
+        //Print saved games
+        for (Jogo jog: jogos){
+            System.out.println(jog.toString());
+        }
+    }
+
 
     //load save
     public static void parse() throws LinhaIncorretaException {
