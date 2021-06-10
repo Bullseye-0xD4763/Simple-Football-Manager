@@ -22,7 +22,7 @@ public class Main {
 
         keepAlive = true;
         while (keepAlive == true) {
-            System.out.println("\nEnter one of the following options: " + "\n1. Start game" + "\n2. Load Save" + "\n3. Manage Team" + "\n4. Create Team" + "\n5. Create Player" + "\n6. Credits\n7. Exit\n");
+            System.out.println("\nEnter one of the following options: " + "\n1. Start game" + "\n2. Display Saved Games" + "\n3. Manage Team" + "\n4. Create Team" + "\n5. Create Player" + "\n6. Credits\n7. Exit\n");
             // string name é a capturada
             String stdName = in.nextLine();
             switch (stdName) {
@@ -32,13 +32,12 @@ public class Main {
                     //keepAlive = false;
                     break;
                 case "2":
-
                     // load save
-                    keepAlive = false;
+                    System.out.println("Saved Games: ");
+                    Parser.loadSave();
                     break;
                 case "3":
                     associatePlayer();
-                    keepAlive = false;
                     break;
                 case "4":
                     createTeam();
@@ -46,10 +45,10 @@ public class Main {
                     break;
                 case "5":
                     createPlayer();
-                    keepAlive = false;
                     break;
                 case "6":
                     // Créditos
+                    System.out.println("Feito por: Cristiano Ronaldo");
                     keepAlive = false;
                     break;
                 case "7":
@@ -142,10 +141,10 @@ public class Main {
 
         //nao há perigo de posicaoString nao estar incializada, pois caso contrário não muda a database
         if (posicao >= 1 && posicao <= 5) {
-            if (posicao == 1 || posicao == 2) { updateDatabase("Equipa:Temp", "Equipa:Temp\n"+posicaoString+":"+name+","+velocidade+","+resistencia+","+destreza+","+impulsao+","+cabeca+","+ remate +","+passe);}
-            else if (posicao == 3) {updateDatabase("Equipa:Temp", "Equipa:Temp\n"+posicaoString+":"+name+","+velocidade+","+resistencia+","+destreza+","+impulsao+","+cabeca+","+ remate +","+passe+","+recuperacao);}
-            else if (posicao == 4) {updateDatabase("Equipa:Temp", "Equipa:Temp\n"+posicaoString+":"+name+","+velocidade+","+resistencia+","+destreza+","+impulsao+","+cabeca+","+ remate +","+passe+","+cruzamento);}
-            else {updateDatabase("Equipa:Temp", "Equipa:Temp\n"+posicaoString+":"+name+","+velocidade+","+resistencia+","+destreza+","+impulsao+","+cabeca+","+ remate +","+passe+","+elasticidade);}
+            if (posicao == 1 || posicao == 2) { updateDatabase("Equipa:Temp", "Equipa:Temp\n"+posicaoString+":"+name+","+number+","+velocidade+","+resistencia+","+destreza+","+impulsao+","+cabeca+","+ remate +","+passe);}
+            else if (posicao == 3) {updateDatabase("Equipa:Temp", "Equipa:Temp\n"+posicaoString+":"+name+","+number+","+velocidade+","+resistencia+","+destreza+","+impulsao+","+cabeca+","+ remate +","+passe+","+recuperacao);}
+            else if (posicao == 4) {updateDatabase("Equipa:Temp", "Equipa:Temp\n"+posicaoString+":"+name+","+number+","+velocidade+","+resistencia+","+destreza+","+impulsao+","+cabeca+","+ remate +","+passe+","+cruzamento);}
+            else {updateDatabase("Equipa:Temp", "Equipa:Temp\n"+posicaoString+":"+name+","+velocidade+","+number+","+resistencia+","+destreza+","+impulsao+","+cabeca+","+ remate +","+passe+","+elasticidade);}
         }
     }
 
