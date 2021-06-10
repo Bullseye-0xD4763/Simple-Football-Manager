@@ -67,22 +67,15 @@ public class Main {
     }
     //3. Manage team
     private static void associatePlayer() throws IOException {
-        //print jogadores em equipa TEMP
-
-
         System.out.println("Nome do jogador a transferir ?");
         String nome = in.nextLine();
-        System.out.println("Equipa");
+        System.out.println("Equipa de destino ?");
         String destino = in.nextLine();
 
-        //Se o jogador não tiver equipa
-        //updateDatabase("Equipa:"+destino, "Equipa:"+destino+"\n"+nome);
-
-        //Se o jogador tiver equipa
         updateDatabase(nome,"");
         updateDatabase("Equipa:"+destino, "Equipa:"+destino+"\n"+nome);
 
-       // updateDatabase();
+
     }
     //4. Create team
     private static void createTeam() {
