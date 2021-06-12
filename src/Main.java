@@ -28,7 +28,8 @@ public class Main {
             switch (stdName) {
                 case "1":
                     System.out.println("Start");
-                    Parser.parse();
+                    //Parser.parse();
+                    Parser.startGame();
                     //keepAlive = false;
                     break;
                 case "2":
@@ -71,10 +72,11 @@ public class Main {
         System.out.println("Equipa de destino ?");
         String destino = in.nextLine();
 
-        updateDatabase(nome,"");
-        updateDatabase("Equipa:"+destino, "Equipa:"+destino+"\n"+nome);
+        String fullLine = getFullData(nome);
+        System.out.println(fullLine);
 
-
+        updateDatabase(fullLine,"");
+        updateDatabase("Equipa:"+destino, "Equipa:"+destino+"\n"+fullLine);
     }
     //4. Create team
     private static void createTeam() {
@@ -166,5 +168,14 @@ public class Main {
         writer.flush();
     }
 
+    //obter linha inteira onde ocorre o nome do jogador
+    public static String getFullData(String palavra) throws IOException, NullPointerException {
+        Scanner fileInput = new Scanner(new File("src/proj/Jogadores.txt"));
+        while (fileInput.hasNextLine()){
+            String line = fileInput.nextLine();
+            if (line.contains(palavra)){ return line; }
+        }
+        return "nada";
+    }
 
 }
