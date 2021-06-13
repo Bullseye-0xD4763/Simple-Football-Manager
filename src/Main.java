@@ -29,8 +29,10 @@ public class Main {
                 case "1":
                     System.out.println("Start");
                     //Parser.parse();
-                    Parser.startGame();
+                    Jogo j = Parser.startGame();
+                    save(j);
                     //keepAlive = false;
+
                     break;
                 case "2":
                     // load save
@@ -176,6 +178,20 @@ public class Main {
             if (line.contains(palavra)){ return line; }
         }
         return "nada";
+    }
+
+    public static void save(Jogo j){
+        System.out.println("Pretende gravar o jogo ? (1 se sim)");
+        int grav = in.nextInt();
+
+        if (grav == 1){
+            try {
+                String content = j.toString()+"\n";
+                Files.write(Paths.get("src/proj/Jogadores.txt"), content.getBytes(StandardCharsets.UTF_8), StandardOpenOption.APPEND);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
     }
 
 }
