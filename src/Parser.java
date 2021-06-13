@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 public class Parser {
 
-    public static void startGame() throws LinhaIncorretaException{
+    public static Jogo startGame() throws LinhaIncorretaException{
         Scanner in = new Scanner(System.in);
         List<String> linhas = lerFicheiro("src/proj/Jogadores.txt");
         Map<String, Equipa> equipasTotal = new HashMap<>();
@@ -70,14 +70,14 @@ public class Parser {
         //Escolher Equipas
 
         Equipa casa = null, fora = null;
-       // System.out.println("Equipa a escolher:"); String equipaCasa = in.nextLine();
-        //System.out.println("Equipa adversária: "); String equipaFora = in.nextLine();
+        System.out.println("Equipa a escolher:"); String equipaCasa = in.nextLine();
+        System.out.println("Equipa adversária: "); String equipaFora = in.nextLine();
 
-        String a ="Vivaldi F. C.", b ="Mozart F. C.";
+
 
         for (Equipa e: equipasTotal.values()){
-            if (e.getNome().equals(a)){ casa = e;}
-            if (e.getNome().equals(b)){ fora = e;}
+            if (e.getNome().equals(equipaCasa)){ casa = e;}
+            if (e.getNome().equals(equipaFora)){ fora = e;}
            // System.out.println(e.getNome());
         }
 
@@ -91,18 +91,32 @@ public class Parser {
 
 
 
-        //Escolher Jogadores
-        Equipa casaTitulares = null, casaSuplentes = null, foraTitulares = null, foraSuplentes = null;
-        System.out.println("\n*\nMenu de escolha de Plantel------------------\nInsere o nº do jogador para o selecionar");
-        casaTitulares = Equipa.defineTeam(casa);
+        //Escolher Jogadores - definir equipas
+        System.out.println("\n*\nMenu de escolha de Plantel------------------\nInsere o nº do jogador para o selecionar\n");
+        Equipa casaTitulares = Equipa.defineTeam(casa);
+        Equipa foraTitulares = Equipa.defineTeam(fora);
+        Equipa casaSuplentes = Equipa.getSuplentes(casa, casaTitulares);
+        Equipa foraSuplentes = Equipa.getSuplentes(fora, foraTitulares);
 
-        /*
-        System.out.println("Teste teste equipa escolhida -> : ");
-        casaTitulares.toString();
-        */
+        System.out.println("Main team: "+casaTitulares.toStringWithStats());
+        System.out.println("Secondary team: "+casaSuplentes.toStringWithStats());
 
 
+        //Definir estratégia
+        int stratCasa = 0, stratFora = 0;
+        while (!Equipa.legalStrat(stratCasa) && !Equipa.legalStrat(stratFora)) {
+            System.out.println("Tua Estratégia : (Insere no formato Int: 442)\n(4-4-2) (4-3-3) (5-4-1) (5-3-2)\n");stratCasa = in.nextInt();
+            if ((!Equipa.legalStrat(stratCasa))){ System.out.println("Estratégia ilegal."); }
+            System.out.println("Estratégia do adversário: (Insere no formato Int: 442)\n(4-4-2) (4-3-3) (5-4-1) (5-3-2)\n");stratFora = in.nextInt();
+            if ((!Equipa.legalStrat(stratFora))){ System.out.println("Estratégia ilegal."); }
+        }
+
+
+
+        //Jogar
+        Jogo jog =Jogo.Play(casaTitulares, foraTitulares, stratCasa , stratFora);
         /**/
+        return jog;
     }
 
 
