@@ -1,5 +1,8 @@
 package proj;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 public class Jogador {
 
     private String nomeJogador;
@@ -29,6 +32,7 @@ public class Jogador {
         remate = j.getRemate();
         passe = j.getPasse();
     }
+
 
     public String getNomeJogador() {
         return nomeJogador;
@@ -107,19 +111,35 @@ public class Jogador {
         return new Jogador(this);
     }
 
-    /*public static Jogador parse(String input){
+    public static Jogador parse(String input){
         String[] campos = input.split(",");
-        return new Jogador(campos[0], Integer.parseInt(campos[1]), campos[2],
+        return new Jogador(campos[0], Integer.parseInt(campos[1]), Integer.parseInt(campos[2]),
                                         Integer.parseInt(campos[3]),
                                         Integer.parseInt(campos[4]),
                                         Integer.parseInt(campos[5]),
                                         Integer.parseInt(campos[6]),
                                         Integer.parseInt(campos[7]),
                                         Integer.parseInt(campos[8]));
-    }*/
+    }
 
     public String toString(){
         return nomeJogador +"\n";
+    }
+
+    public String toStringWithStats(){
+        return ("Nº "+numeroJogador+"|"+nomeJogador+"|"+velocidade+"|"+resistencia+"|"+destreza+"|"+impulsao+"|"+cabeca+"|"+remate+"|"+passe+"\n");
+    }
+
+    public static Jogador randomPlayer(Equipa e){
+        Random random = new Random();
+        ArrayList<Jogador> jogadoresCasa = new ArrayList<Jogador>();
+
+        for (Jogador jog : e.jogadores) {
+            jogadoresCasa.add(jog);
+        }
+
+        Jogador j =  jogadoresCasa.get(random.nextInt(11));
+        return j;
     }
 
 }
