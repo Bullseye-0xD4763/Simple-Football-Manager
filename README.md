@@ -4,9 +4,10 @@
 </p>
 
 
-##Requirements
+Requirements
+
 ---------------------
-```bash
+```
 
 1.
 - N main players + M substitues
