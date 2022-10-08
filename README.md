@@ -3,9 +3,8 @@
   <img width="800" height="500" src="https://user-images.githubusercontent.com/61991247/124785267-a094ba00-df3e-11eb-8abe-ff3ae37f93a4.png">
 </p>
 
-**
-Requirements**
 
+Features
 ---------------------
 ```
 
